@@ -1,6 +1,5 @@
 package org.jot.domain;
 
-
 import jakarta.validation.constraints.NotNull;
 
 public class Account {
