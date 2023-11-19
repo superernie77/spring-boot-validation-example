@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 @RestController
@@ -28,7 +30,7 @@ public class AccountStatementController {
     }
 
     @PostMapping
-    public AccountStatement postAccountStatement(AccountStatement accountStatement){
+    public AccountStatement postAccountStatement(@Valid AccountStatement accountStatement){
         return accountStatementService.postAccountStatement(accountStatement);
     }
 }

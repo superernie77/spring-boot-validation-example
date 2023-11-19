@@ -2,12 +2,24 @@ package org.jot.domain;
 
 public class AccountStatement {
 
+	/**
+	 * Number of the account this statement belongs to
+	 */
     private Long accountId;
 
+    /**
+     * ID of the account statement
+     */
     private Long accountStatementId;
 
+    /**
+     * Id of the customer
+     */
     private Long customerId;
 
+    /**
+     * Statement document as byte array.
+     */
     private byte[] statement;
 
     public Long getAccountId() {

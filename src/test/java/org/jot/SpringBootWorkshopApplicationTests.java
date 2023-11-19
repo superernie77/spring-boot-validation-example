@@ -43,4 +43,18 @@ class SpringBootWorkshopApplicationTests {
 		);
 		Assertions.assertTrue(thrown.getMessage().contentEquals("400 : \"{\"emailAddress\":\"email cannot be null\"}\""));
 	}
+	
+	@Test
+	void testValidationNoPhone() {
+		Account account = new Account();
+		EmailAddress email = new EmailAddress();
+		account.setEmailAddress(email);
+
+		HttpClientErrorException thrown = Assertions.assertThrows(
+				HttpClientErrorException.class,
+				() -> restTemplate.postForObject("http://localhost:"+port+"/accounts", account, Account.class),
+				"Expected to get a HttpClientErrorException, but it didn't"
+		);
+		Assertions.assertTrue(thrown.getMessage().contentEquals("400 : \"{\"phoneNumber\":\"phone number cannot be null\"}\""));
+	}
 }

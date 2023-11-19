@@ -7,6 +7,9 @@ import org.jot.domain.EmailAddress;
 import org.jot.domain.PhoneNumber;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Mock implementation for the account repository
+ */
 @Repository
 public class AccountRepository {
 
